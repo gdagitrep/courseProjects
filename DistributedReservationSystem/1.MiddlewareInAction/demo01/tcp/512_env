@@ -1,0 +1,31 @@
+
+export JAVAC=javac
+# uncomment the below line to compile with java 1.6 (in mcgill machines)
+#export JAVAC='javac -target 1.6 -source 1.6 -bootclasspath /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar'
+
+
+export SCRIPT_DIR=${SRC512_HOME}/scripts
+export CHARON_CLASSPATH=${SRC512_HOME}/tools/charon.jar
+
+export LOG_DIR=${SRC512_HOME}/logs
+
+export SHARED_SRC=${SRC512_HOME}/srvrshared
+export CLIENT_SRC=${SRC512_HOME}/clientsrc
+export SERVER_SRC=${SRC512_HOME}/servercode
+export MIDW_SRC=${SRC512_HOME}/middleware
+
+export HTL_SRVR_RO_OBJ_NAME=HTL_ResourceManager
+export HTL_SRVR_RO_REGISTRY_HOST=open-20
+export HTL_SRVR_RO_PORT=7480
+
+export CAR_SRVR_RO_OBJ_NAME=CAR_ResourceManager
+export CAR_SRVR_RO_REGISTRY_HOST=open-21
+export CAR_SRVR_RO_PORT=7470
+
+export FLT_SRVR_RO_OBJ_NAME=FLT_ResourceManager
+export FLT_SRVR_RO_REGISTRY_HOST=open-22
+export FLT_SRVR_RO_PORT=7460
+
+export MIDW_RO_OBJ_NAME=MWLayer
+export MIDW_RO_REGISTRY_HOST=open-23
+export MIDW_RO_PORT=7450

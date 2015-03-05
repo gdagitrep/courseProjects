@@ -1,0 +1,51 @@
+Successful
+Connected to RM
+
+
+	Client Interface
+Type "help" for list of supported commands
+
+>Adding a new Car using id: 1
+Car Location: Montreal
+Add Number of Cars: 50
+Set Price: 35
+Cars added
+
+>Adding a new Flight using id: 1
+Flight number: 239
+Add Flight Seats: 300
+Set Flight Price: 1500
+Flight added
+
+>Adding a new Flight using id: 1
+Flight number: 632
+Add Flight Seats: 200
+Set Flight Price: 700
+Flight added
+
+>Adding a new Room using id: 1
+Room Location: Montreal
+Add Number of Rooms: 250
+Set Price: 120
+Rooms added
+
+>Adding a new Customer using id:1 and cid 10002
+new customer id:10002
+
+>Reserving an Itinerary using id:1
+Customer id:10002
+Flight number239
+Flight number632
+Location for Car/Room booking:Monteal
+Car to book?:true
+Room to book?:true
+Itinerary could not be reserved.
+
+>Querying Customer information using id: 1
+Customer id: 10002
+Customer info:Bill for customer 10002
+1 flight-239 $1500
+1 flight-632 $700
+
+
+>Quitting client.

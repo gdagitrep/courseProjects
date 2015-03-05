@@ -1,0 +1,26 @@
+
+export JAVAC=javac
+export JAVAC='javac -target 1.6 -source 1.6 -bootclasspath /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar'
+
+export SCRIPT_DIR=${SRC512_HOME}/scripts
+
+export SHARED_SRC=${SRC512_HOME}/srvrshared
+export CLIENT_SRC=${SRC512_HOME}/clientsrc
+export SERVER_SRC=${SRC512_HOME}/servercode
+export MIDW_SRC=${SRC512_HOME}/middleware
+
+export HTL_SRVR_RMI_OBJ_NAME=G13HTL_ResourceManager
+export HTL_SRVR_RMI_REGISTRY_HOST=localhost
+export HTL_SRVR_RMI_PORT=6480
+
+export CAR_SRVR_RMI_OBJ_NAME=G13CAR_ResourceManager
+export CAR_SRVR_RMI_REGISTRY_HOST=localhost
+export CAR_SRVR_RMI_PORT=6470
+
+export FLT_SRVR_RMI_OBJ_NAME=G13FLT_ResourceManager
+export FLT_SRVR_RMI_REGISTRY_HOST=localhost
+export FLT_SRVR_RMI_PORT=6460
+
+export MIDW_RMI_REGISTRY_HOST=localhost
+export MIDW_RMI_PORT=6450
+export MIDW_RMI_OBJ_NAME=G13MWManager
