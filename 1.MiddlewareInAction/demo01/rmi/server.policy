@@ -1,5 +1,0 @@
-
-grant codeBase "file:/home/2013/jdsilv2/comp512/asgn01_wrk/servercode" {
-    permission java.security.AllPermission;
-};
-
