@@ -1,0 +1,230 @@
+package jango;
+
+import java.lang.reflect.*;
+import java.io.*;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Vector;
+
+public class Jango
+{
+
+	public static StringBuilder buildRepStub(Class cls, String packageName, int hashingArg)
+	{
+	  StringBuilder repStubStr = new StringBuilder(5000);
+		String stubClassName = cls.getSimpleName() + "_RepStub";
+
+		//Setup the name of the package.
+		if(packageName != null)
+		{	repStubStr.append("package "); repStubStr.append(packageName); repStubStr.append(";\n\n"); }
+
+		//Import the interface which we are supporting.
+		if(cls.getPackage() != null)
+		{
+			repStubStr.append("import "); repStubStr.append(cls.getName()); 
+			repStubStr.append(";\n");
+		}
+
+		//Import classes used by stub.
+		repStubStr.append("import jango.JangoRepStub;\n");
+		//repStubStr.append("import java.rmi.RemoteException;\n");
+
+		//Start of class definition.
+		repStubStr.append("\n\npublic class "); repStubStr.append(stubClassName);
+		repStubStr.append(" extends JangoRepStub<"); 
+		repStubStr.append(cls.getSimpleName()); 
+		repStubStr.append("> implements ");
+		repStubStr.append(cls.getSimpleName()); 
+		repStubStr.append("\n{\n");
+
+		//The constructors
+		//constructor 1
+		repStubStr.append("	public ");repStubStr.append(stubClassName);
+		repStubStr.append("(String rmiHosts[], String srvrNames[], int rmiPorts[])\n");
+		repStubStr.append("	{ super(rmiHosts, srvrNames, rmiPorts, JANGO_MAX_HASH_BUCKET_SIZE, -1); }\n\n");
+
+		//constructor 2
+		repStubStr.append("	public ");repStubStr.append(stubClassName);
+		repStubStr.append("(String rmiHosts[], String srvrNames[], int rmiPorts[], int maxHashBucketSize)\n");
+		repStubStr.append("	{ super(rmiHosts, srvrNames, rmiPorts, maxHashBucketSize, -1); }\n\n");
+
+		//constructor 3
+		repStubStr.append("	public ");repStubStr.append(stubClassName);
+		repStubStr.append("(String rmiHosts[], String srvrNames[], int rmiPorts[], int maxHashBucketSize, int maxRetries)\n");
+		repStubStr.append("	{ super(rmiHosts, srvrNames, rmiPorts, maxHashBucketSize, maxRetries); }\n\n");
+
+		//constructor 4
+		repStubStr.append("	public ");repStubStr.append(stubClassName);
+		repStubStr.append("(int numReplics, String replicConfigs)\n");
+		repStubStr.append("	{ super(numReplics, replicConfigs, JANGO_MAX_HASH_BUCKET_SIZE, -1); }\n\n");
+
+		//constructor 5
+		repStubStr.append("	public ");repStubStr.append(stubClassName);
+		repStubStr.append("(int numReplics, String replicConfigs, int maxHashBucketSize)\n");
+		repStubStr.append("	{ super(numReplics, replicConfigs, maxHashBucketSize, -1); }\n\n");
+
+		//constructor 6
+		repStubStr.append("	public ");repStubStr.append(stubClassName);
+		repStubStr.append("(int numReplics, String replicConfigs, int maxHashBucketSize, int maxRetries)\n");
+		repStubStr.append("	{ super(numReplics, replicConfigs, maxHashBucketSize, maxRetries); }\n\n");
+		//End of all constructors.
+
+		Deque<Class> stack = new ArrayDeque<Class>(10);
+		stack.push(cls);
+
+		//Keep track of method definitions here, so we don't have dups.
+		Vector<String> stubMthds = new Vector<String>(100);
+
+		while(!stack.isEmpty())
+		{
+			//Pick up the next interface from the stack.
+			Class intf = stack.pop();
+
+			//Get all the interfaces implemented by this one and
+			//push it into stack for next check.
+			Class intfInh[] = intf.getInterfaces();
+			for(int z=0; z<intfInh.length; z++)
+				stack.push(intfInh[z]);
+
+			//Start generating stub methods from this interface.
+			Method[] mthds = intf.getDeclaredMethods();
+			for(int i=0; i<mthds.length; i++)
+			{
+				StringBuilder repStubStrMthdDefn = new StringBuilder(200);
+				//Start setup declaration of the method.
+				if ( ((mthds[i].getModifiers()) & (Member.PUBLIC)) == Member.PUBLIC)
+					repStubStrMthdDefn.append("	public");
+				else
+					repStubStrMthdDefn.append("	      ");
+				repStubStrMthdDefn.append(" ");
+	
+				// specify the original return types.
+				String returnType = mthds[i].getReturnType().getName();
+				repStubStrMthdDefn.append(returnType);
+				repStubStrMthdDefn.append(" ");
+	
+				repStubStrMthdDefn.append(mthds[i].getName());
+				repStubStrMthdDefn.append("(");
+	
+				// we have to generate our own sequential argument names
+				Class params[] = mthds[i].getParameterTypes();
+				for(int j=0; j<params.length; j++)
+				{
+					repStubStrMthdDefn.append(params[j].getName());
+					repStubStrMthdDefn.append(" arg_"); repStubStrMthdDefn.append(j);
+					if(j!=params.length-1) repStubStrMthdDefn.append(",");
+				}
+	
+				repStubStrMthdDefn.append(")");
+	
+				// specify required exceptions.
+				Class exceptions[] = mthds[i].getExceptionTypes();
+				if(exceptions.length > 0) repStubStrMthdDefn.append(" throws ");
+				for(int j=0; j<exceptions.length; j++)
+				{
+					repStubStrMthdDefn.append(exceptions[j].getName());
+					if(j!=exceptions.length-1) repStubStrMthdDefn.append(", ");
+				}
+				//Declaration of method is complete
+
+				//Duplicate method, don't buid the method again, skip
+				if(stubMthds.contains(repStubStrMthdDefn.toString()))
+					continue;
+
+				stubMthds.add(repStubStrMthdDefn.toString());
+				repStubStr.append(repStubStrMthdDefn);
+	
+				//Body of the method.
+				repStubStr.append("\n\t{\n");
+	
+				//work variables.
+				repStubStr.append("\t\tint retries=0;\n\t\tint srvrIdx = hash(");
+				//Decide which argument does the hashing to locate the replica server.
+				if(!(hashingArg < 0) && hashingArg < params.length)
+				{ repStubStr.append("arg_"); repStubStr.append(hashingArg); }
+				repStubStr.append(");\n");
+				repStubStr.append("\t\tjava.rmi.RemoteException eR;\n");
+	
+				//While loop to keep checking for a successfull replica.
+				repStubStr.append("\t\tdo\n");
+				repStubStr.append("\t\t{\n");
+	
+				//Execute the RMI method in a try block.
+				repStubStr.append("\t\t\ttry{ ");
+				if(! returnType.equals("void")) //No return values for void.
+					repStubStr.append("return ");
+				repStubStr.append("getSrvr(srvrIdx).");
+				repStubStr.append(mthds[i].getName());
+				repStubStr.append("(");
+				for(int j=0; j<params.length; j++)
+				{
+					//repStubStr.append(params[j].getName());
+					repStubStr.append(" arg_"); repStubStr.append(j);
+					if(j!=params.length-1) repStubStr.append(",");
+				}
+				repStubStr.append("); ");
+				if(returnType.equals("void")) //No return values for void.
+					repStubStr.append(" return; ");
+				repStubStr.append(" }\n");
+	
+				//Catch the exception
+				repStubStr.append("\t\t\tcatch(java.rmi.RemoteException e)\n");
+				repStubStr.append("\t\t\t{\n");
+				repStubStr.append("\t\t\t\tSystem.out.println(\"Exception:\" + e);\n");
+				repStubStr.append("\t\t\t\teR = e;\n\t\t\t\tretries++;\n");
+				repStubStr.append("\t\t\t\tif(retries < maxRetries)\n");
+				repStubStr.append("\t\t\t\t\tfixHashBucket(srvrIdx);\n");
+				repStubStr.append("\t\t\t}\n");
+	
+				repStubStr.append("\t\t}while(retries < maxRetries);\n");
+				//End of while
+	
+				//Throw error if we couldn't find a good replica.
+				repStubStr.append("\n\t\tthrow eR;\n");
+	
+				//End body of the method.
+				repStubStr.append("	}\n\n");
+			} // For loop through all of the methods in the interface.
+
+		} //Loop through all sub interfaces.
+
+		//End of class definition.
+		repStubStr.append("\n}");
+
+		return repStubStr;
+	}
+
+  public static void main(String args[])
+	{
+		try
+		{
+	  	Class cls = Class.forName(args[0]);
+
+			String opDir = args[1];
+
+			int hashingArg = Integer.parseInt(args[2]);
+
+			String opPackageName = null;
+			if(args.length >= 4) opPackageName = args[3];
+
+			FileOutputStream repStubFile = new FileOutputStream(opDir+"/"+cls.getSimpleName()+"_RepStub.java");
+			repStubFile.write(buildRepStub(cls, opPackageName, hashingArg).toString().getBytes());
+			repStubFile.close();
+		}
+    catch(ClassNotFoundException e)
+    {   
+      e.printStackTrace();
+    }   
+    catch(FileNotFoundException e)
+    {   
+      e.printStackTrace();
+    }   
+    catch(IOException e)
+    {   
+      e.printStackTrace();
+    }   
+
+	}
+
+}

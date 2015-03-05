@@ -1,0 +1,58 @@
++ env
+NNTPSERVER=news.mcgill.ca
+rvm_bin_path=/usr/local/rvm/bin
+COMP_WORDBREAKS= 	
+"'><;|&(:
+PVM_RSH=/usr/bin/ssh
+TERM=xterm
+SHELL=/usr/local/bin/bash
+XDG_SESSION_COOKIE=0eb17ada96c8d87893092b8200000008-1380559557.717452-1162595696
+SSH_CLIENT=132.206.52.45 48414 22
+OLDPWD=/home/2013/jdsilv2/comp512/demo01/tcp/scripts
+SSH_TTY=/dev/pts/2
+USER=jdsilv2
+rvm_path=/usr/local/rvm
+ILOG_LICENSE_FILE=/usr/local/pkgs/ilog/licdir/access_1.ilm
+rvm_prefix=/usr/local
+MAIL=/var/mail/jdsilv2
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/rvm/bin:/usr/lib/mpich-mpd/bin:/usr/local/pkgs/pc2-9.2.3/bin:/usr/local/fsl/bin
+PWD=/home/2013/jdsilv2/comp512/demo01/tcp/scripts
+LANG=en_CA.UTF-8
+NODE_PATH=/usr/lib/node_modules:/usr/lib/nodejs:/usr/share/javascript
+CPLEXLICDIR=/usr/local/pkgs/cplex-6/licdir
+rvm_version=1.22.1 (stable)
+SHLVL=2
+HOME=/home/2013/jdsilv2
+LANGUAGE=en_CA:en
+SRC512_HOME=/home/2013/jdsilv2/comp512/demo01/tcp
+LOGNAME=jdsilv2
+FSLDIR=/usr/local/fsl
+SSH_CONNECTION=132.206.52.45 48414 132.206.54.68 22
+GCONF_LOCAL_LOCKS=1
+_=/usr/bin/env
+JAVAC=javac
+SCRIPT_DIR=/home/2013/jdsilv2/comp512/demo01/tcp/scripts
+CHARON_CLASSPATH=/home/2013/jdsilv2/comp512/demo01/tcp/tools/charon.jar
+LOG_DIR=/home/2013/jdsilv2/comp512/demo01/tcp/logs
+SHARED_SRC=/home/2013/jdsilv2/comp512/demo01/tcp/srvrshared
+CLIENT_SRC=/home/2013/jdsilv2/comp512/demo01/tcp/clientsrc
+SERVER_SRC=/home/2013/jdsilv2/comp512/demo01/tcp/servercode
+MIDW_SRC=/home/2013/jdsilv2/comp512/demo01/tcp/middleware
+HTL_SRVR_RO_OBJ_NAME=HTL_ResourceManager
+HTL_SRVR_RO_REGISTRY_HOST=open-20
+HTL_SRVR_RO_PORT=7480
+CAR_SRVR_RO_OBJ_NAME=CAR_ResourceManager
+CAR_SRVR_RO_REGISTRY_HOST=open-21
+CAR_SRVR_RO_PORT=7470
+FLT_SRVR_RO_OBJ_NAME=FLT_ResourceManager
+FLT_SRVR_RO_REGISTRY_HOST=open-22
+FLT_SRVR_RO_PORT=7460
+MIDW_RO_OBJ_NAME=MWLayer
+MIDW_RO_REGISTRY_HOST=open-23
+MIDW_RO_PORT=7450
++ export 'SRVR_RO_OBJ_NAME=CAR_ResourceManager'
++ export 'SRVR_RO_PORT=7470'
++ java -cp /home/2013/jdsilv2/comp512/demo01/tcp/tools/charon.jar:/home/2013/jdsilv2/comp512/demo01/tcp/servercode:/home/2013/jdsilv2/comp512/demo01/tcp/srvrshared/G13Shared.jar ResImpl.ResourceManagerImpl
+Server ready
+Thread-1 INFO: RM::addCars(1, Sandy, 10, $55) called
+Thread-1 INFO: RM::addCars(1) created new location Sandy, count=10, price=$55

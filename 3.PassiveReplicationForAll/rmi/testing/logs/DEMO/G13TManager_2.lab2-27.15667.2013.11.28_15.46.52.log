@@ -1,0 +1,298 @@
+Initializing the perf monitor.
+TRANSACTION_IDLE_TIMEOUT = 240000
+binding on _jango_rep
+Error:lab2-29:15668:G13TManager_3: couldn't be connected.
+java.rmi.NotBoundException: G13TManager_3_jango_rep
+	at sun.rmi.registry.RegistryImpl.lookup(RegistryImpl.java:137)
+	at sun.rmi.registry.RegistryImpl_Skel.dispatch(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.oldDispatch(UnicastServerRef.java:409)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:267)
+	at sun.rmi.transport.Transport$1.run(Transport.java:177)
+	at sun.rmi.transport.Transport$1.run(Transport.java:174)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:173)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:553)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:808)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:667)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+	at sun.rmi.transport.StreamRemoteCall.exceptionReceivedFromServer(StreamRemoteCall.java:273)
+	at sun.rmi.transport.StreamRemoteCall.executeCall(StreamRemoteCall.java:251)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:377)
+	at sun.rmi.registry.RegistryImpl_Stub.lookup(Unknown Source)
+	at jango.JangoRep.buildReplics(JangoRep.java:210)
+	at jango.JangoRep.initialize(JangoRep.java:139)
+	at TxImp.TxnManager.<init>(TxnManager.java:95)
+	at TxImp.TxnManager.main(TxnManager.java:112)
+Found 1 neighbours.
+Trying to locate a master...
+Replica 0 returned status 1
+main INFO: TM:loadDataFromMaster()
+Loaded data from master..
+Server ready
+Added replic : lab2-29:15668:G13TManager_3
+RMI Cx(5) INFO: TM:registerRM_Rep() For HTL
+RMI Cx(5) INFO: TM:registerRM:HTL: is new RMType
+RMI Cx(5) INFO: TM:registerRM(HTL) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For HTL
+RMI Cx(5) INFO: TM:registerRM(HTL) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For HTL
+RMI Cx(5) INFO: TM:registerRM(HTL) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For CAR
+RMI Cx(5) INFO: TM:registerRM:CAR: is new RMType
+RMI Cx(5) INFO: TM:registerRM(CAR) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For CAR
+RMI Cx(5) INFO: TM:registerRM(CAR) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For CAR
+RMI Cx(5) INFO: TM:registerRM(CAR) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For FLT
+RMI Cx(5) INFO: TM:registerRM:FLT: is new RMType
+RMI Cx(5) INFO: TM:registerRM(FLT) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For FLT
+RMI Cx(5) INFO: TM:registerRM(FLT) has a new RM
+RMI Cx(5) INFO: TM:registerRM_Rep() For FLT
+RMI Cx(5) INFO: TM:registerRM(FLT) has a new RM
+RMI Cx(137) INFO: TM:startTxn_Rep(1)
+RMI Cx(137) INFO: TM:lockObject_Rep(1,car-montreal,1)
+RMI Cx(137) INFO: TM:registerTxnListner_Rep(1,CAR)
+RMI Cx(137) INFO: TM:lockObject_Rep(1,car-montreal,1)
+RMI Cx(137) INFO: TM:registerTxnListner_Rep(1,CAR)
+RMI Cx(137) INFO: TM:registerTxnListner_Rep(1,CAR)
+Request received to switch to a master
+Error:lab2-26:15666:G13TManager_1: couldn't be connected.
+java.rmi.ConnectException: Connection refused to host: 132.206.54.136; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:128)
+	at java.rmi.server.RemoteObjectInvocationHandler.invokeRemoteMethod(RemoteObjectInvocationHandler.java:194)
+	at java.rmi.server.RemoteObjectInvocationHandler.invoke(RemoteObjectInvocationHandler.java:148)
+	at com.sun.proxy.$Proxy1.getServerStatus(Unknown Source)
+	at jango.JangoRep.buildReplics(JangoRep.java:211)
+	at jango.JangoRep.switchToMaster(JangoRep.java:338)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$1.run(Transport.java:177)
+	at sun.rmi.transport.Transport$1.run(Transport.java:174)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:173)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:553)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:808)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:667)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:146)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 23 more
+Found 1 neighbours.
+Trying to locate a master...
+Error Trying to locate a replica
+java.rmi.ConnectException: Connection refused to host: 132.206.54.136; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:128)
+	at java.rmi.server.RemoteObjectInvocationHandler.invokeRemoteMethod(RemoteObjectInvocationHandler.java:194)
+	at java.rmi.server.RemoteObjectInvocationHandler.invoke(RemoteObjectInvocationHandler.java:148)
+	at com.sun.proxy.$Proxy1.getServerStatus(Unknown Source)
+	at jango.JangoRep.getAMaster(JangoRep.java:261)
+	at jango.JangoRep.switchToMaster(JangoRep.java:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$1.run(Transport.java:177)
+	at sun.rmi.transport.Transport$1.run(Transport.java:174)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:173)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:553)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:808)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:667)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:146)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 23 more
+Replica 2 returned status 2
+Switching to master, ...
+RMI Cx(138) INFO: TM:commitTxn(1)
+RMI Cx(138) INFO: TM:commitTxn:1:CAR:RM replic count :3
+PRF|2013/11/28|16|29|58|lab2-27|G13TManager_2|DEMO|1|UNLOCK|||OK|0
+Err java.rmi.ConnectException: Connection refused to host: 132.206.54.136; nested exception is: 
+	java.net.ConnectException: Connection refused
+java.rmi.ConnectException: Connection refused to host: 132.206.54.136; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:128)
+	at java.rmi.server.RemoteObjectInvocationHandler.invokeRemoteMethod(RemoteObjectInvocationHandler.java:194)
+	at java.rmi.server.RemoteObjectInvocationHandler.invoke(RemoteObjectInvocationHandler.java:148)
+	at com.sun.proxy.$Proxy1.commitTxn_Rep(Unknown Source)
+	at TxImp.TxnManager.mcast_commitTxn_Rep(TxnManager.java:542)
+	at TxImp.TxnManager.commitTxn(TxnManager.java:504)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$1.run(Transport.java:177)
+	at sun.rmi.transport.Transport$1.run(Transport.java:174)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:173)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:553)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:808)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:667)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:146)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 23 more
+RMI Cx(139) INFO: TM:startTxn() returns 2;
+RMI Cx(140) INFO: TM:lockObject(2,car-montreal,0)
+PRF|2013/11/28|16|30|08|lab2-27|G13TManager_2|DEMO|2|LOCK||car-montreal|OK|1
+RMI Cx(140) INFO: TM:registerTxnListner(2,CAR)
+RMI Cx(141) INFO: TM:commitTxn(2)
+RMI Cx(141) INFO: TM:commitTxn:2:CAR:RM replic count :3
+PRF|2013/11/28|16|30|36|lab2-27|G13TManager_2|DEMO|2|UNLOCK|||OK|0
+PRF|2013/11/28|16|30|36|lab2-27|G13TManager_2|DEMO|2|TXN|||OK|35726
+RMI Cx(142) INFO: TM:startTxn() returns 3;
+RMI Cx(144) INFO: TM:lockObject(3,car-paris,1)
+PRF|2013/11/28|16|31|53|lab2-27|G13TManager_2|DEMO|3|LOCK||car-paris|OK|1
+RMI Cx(144) INFO: TM:registerTxnListner(3,CAR)
+RMI Cx(144) INFO: TM:lockObject(3,car-paris,1)
+PRF|2013/11/28|16|31|53|lab2-27|G13TManager_2|DEMO|3|LOCK||car-paris|OK|0
+RMI Cx(145) INFO: TM:registerTxnListner(3,CAR)
+RMI Cx(147) INFO: TM:commitTxn(3)
+RMI Cx(147) INFO: TM:commitTxn:3:CAR:RM replic count :3
+java.rmi.ConnectException: Connection refused to host: 132.206.54.109; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:128)
+	at java.rmi.server.RemoteObjectInvocationHandler.invokeRemoteMethod(RemoteObjectInvocationHandler.java:194)
+	at java.rmi.server.RemoteObjectInvocationHandler.invoke(RemoteObjectInvocationHandler.java:148)
+	at com.sun.proxy.$Proxy2.commitTxn(Unknown Source)
+	at TxImp.TxnManager.commitTxn(TxnManager.java:484)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$1.run(Transport.java:177)
+	at sun.rmi.transport.Transport$1.run(Transport.java:174)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:173)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:553)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:808)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:667)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:146)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 22 more
+PRF|2013/11/28|16|32|04|lab2-27|G13TManager_2|DEMO|3|UNLOCK|||OK|0
+PRF|2013/11/28|16|32|04|lab2-27|G13TManager_2|DEMO|3|TXN|||OK|23423
+RMI Cx(147) INFO: TM:startTxn() returns 4;
+RMI Cx(144) INFO: TM:lockObject(4,car-paris,0)
+PRF|2013/11/28|16|32|12|lab2-27|G13TManager_2|DEMO|4|LOCK||car-paris|OK|1
+RMI Cx(144) INFO: TM:registerTxnListner(4,CAR)
+RMI Cx(148) INFO: TM:commitTxn(4)
+RMI Cx(148) INFO: TM:commitTxn:4:CAR:RM replic count :3
+java.rmi.ConnectException: Connection refused to host: 132.206.54.109; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:128)
+	at java.rmi.server.RemoteObjectInvocationHandler.invokeRemoteMethod(RemoteObjectInvocationHandler.java:194)
+	at java.rmi.server.RemoteObjectInvocationHandler.invoke(RemoteObjectInvocationHandler.java:148)
+	at com.sun.proxy.$Proxy2.commitTxn(Unknown Source)
+	at TxImp.TxnManager.commitTxn(TxnManager.java:484)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$1.run(Transport.java:177)
+	at sun.rmi.transport.Transport$1.run(Transport.java:174)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:173)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:553)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:808)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:667)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:146)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 22 more
+PRF|2013/11/28|16|32|14|lab2-27|G13TManager_2|DEMO|4|UNLOCK|||OK|0
+PRF|2013/11/28|16|32|14|lab2-27|G13TManager_2|DEMO|4|TXN|||OK|7606

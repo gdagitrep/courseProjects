@@ -1,0 +1,5 @@
+
+grant codeBase "file:/home/2013/jdsilv2/comp512/prj02/work01/rmi/clientsrc/" {
+    permission java.security.AllPermission;
+};
+
