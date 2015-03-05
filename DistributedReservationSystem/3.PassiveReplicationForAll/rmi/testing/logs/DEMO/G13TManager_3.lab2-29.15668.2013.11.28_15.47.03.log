@@ -1,0 +1,55 @@
+Initializing the perf monitor.
+TRANSACTION_IDLE_TIMEOUT = 240000
+binding on _jango_rep
+Found 2 neighbours.
+Trying to locate a master...
+Replica 0 returned status 1
+main INFO: TM:loadDataFromMaster()
+Loaded data from master..
+Server ready
+RMI Cx(2) INFO: TM:registerRM_Rep() For HTL
+RMI Cx(2) INFO: TM:registerRM:HTL: is new RMType
+RMI Cx(2) INFO: TM:registerRM(HTL) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For HTL
+RMI Cx(2) INFO: TM:registerRM(HTL) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For HTL
+RMI Cx(2) INFO: TM:registerRM(HTL) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For CAR
+RMI Cx(2) INFO: TM:registerRM:CAR: is new RMType
+RMI Cx(2) INFO: TM:registerRM(CAR) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For CAR
+RMI Cx(2) INFO: TM:registerRM(CAR) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For CAR
+RMI Cx(2) INFO: TM:registerRM(CAR) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For FLT
+RMI Cx(2) INFO: TM:registerRM:FLT: is new RMType
+RMI Cx(2) INFO: TM:registerRM(FLT) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For FLT
+RMI Cx(2) INFO: TM:registerRM(FLT) has a new RM
+RMI Cx(2) INFO: TM:registerRM_Rep() For FLT
+RMI Cx(2) INFO: TM:registerRM(FLT) has a new RM
+RMI Cx(136) INFO: TM:startTxn_Rep(1)
+RMI Cx(136) INFO: TM:lockObject_Rep(1,car-montreal,1)
+RMI Cx(136) INFO: TM:registerTxnListner_Rep(1,CAR)
+RMI Cx(136) INFO: TM:lockObject_Rep(1,car-montreal,1)
+RMI Cx(136) INFO: TM:registerTxnListner_Rep(1,CAR)
+RMI Cx(136) INFO: TM:registerTxnListner_Rep(1,CAR)
+RMI Cx(138) INFO: TM:commitTxn_Rep(1)
+PRF|2013/11/28|16|29|58|lab2-29|G13TManager_3|DEMO|1|UNLOCK|||OK|0
+RMI Cx(138) INFO: TM:startTxn_Rep(2)
+RMI Cx(138) INFO: TM:lockObject_Rep(2,car-montreal,0)
+RMI Cx(138) INFO: TM:registerTxnListner_Rep(2,CAR)
+RMI Cx(141) INFO: TM:commitTxn_Rep(2)
+PRF|2013/11/28|16|30|36|lab2-29|G13TManager_3|DEMO|2|UNLOCK|||OK|0
+RMI Cx(142) INFO: TM:startTxn_Rep(3)
+RMI Cx(142) INFO: TM:lockObject_Rep(3,car-paris,1)
+RMI Cx(142) INFO: TM:registerTxnListner_Rep(3,CAR)
+RMI Cx(142) INFO: TM:lockObject_Rep(3,car-paris,1)
+RMI Cx(142) INFO: TM:registerTxnListner_Rep(3,CAR)
+RMI Cx(142) INFO: TM:commitTxn_Rep(3)
+PRF|2013/11/28|16|32|04|lab2-29|G13TManager_3|DEMO|3|UNLOCK|||OK|0
+RMI Cx(142) INFO: TM:startTxn_Rep(4)
+RMI Cx(142) INFO: TM:lockObject_Rep(4,car-paris,0)
+RMI Cx(142) INFO: TM:registerTxnListner_Rep(4,CAR)
+RMI Cx(142) INFO: TM:commitTxn_Rep(4)
+PRF|2013/11/28|16|32|14|lab2-29|G13TManager_3|DEMO|4|UNLOCK|||OK|0

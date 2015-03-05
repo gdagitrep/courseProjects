@@ -1,0 +1,64 @@
+
+export JAVAC=javac
+#export JAVAC='javac -target 1.6 -source 1.6 -bootclasspath /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar'
+
+export JAVA='java'
+
+export SCRIPT_DIR=${SRC512_HOME}/scripts
+
+export SHARED_SRC=${SRC512_HOME}/srvrshared
+export CLIENT_SRC=${SRC512_HOME}/clientsrc
+export SERVER_SRC=${SRC512_HOME}/servercode
+export MIDW_SRC=${SRC512_HOME}/middleware
+
+export TX_SRC=${SRC512_HOME}/tx
+
+export TOOLS=${SRC512_HOME}/tools
+
+set -A HTL_RM_RMI_HOSTS lab2-24 lab2-19 lab2-12
+set -A HTL_RM_RMI_PORTS 30666 30667 30668
+set -A HTL_RM_RMI_OBJ_NAMES G13HTL_ResourceManager_1 G13HTL_ResourceManager_2 G13HTL_ResourceManager_3
+
+set -A CAR_RM_RMI_HOSTS lab2-49 lab2-48 lab2-50
+set -A CAR_RM_RMI_PORTS 40666 40667 40668
+set -A CAR_RM_RMI_OBJ_NAMES G13CAR_ResourceManager_1 G13CAR_ResourceManager_2 G13CAR_ResourceManager_3
+
+set -A FLT_RM_RMI_HOSTS lab2-43 lab2-40 lab2-32
+set -A FLT_RM_RMI_PORTS 50666 50667 50668
+set -A FLT_RM_RMI_OBJ_NAMES G13FLT_ResourceManager_1 G13FLT_ResourceManager_2 G13FLT_ResourceManager_3
+
+set -A MIDW_RMI_REG_HOSTS lab2-9 lab2-8 lab2-7
+set -A MIDW_RMI_PORTS 20666 20667 20668
+set -A MIDW_RMI_OBJ_NAMES G13MWManager_1 G13MWManager_2 G13MWManager_3
+
+#set -A TMGR_RMI_REG_HOSTS lab2-26
+#set -A TMGR_RMI_PORTS 15666
+#set -A TMGR_RMI_OBJ_NAMES G13TManager_1
+
+set -A TMGR_RMI_REG_HOSTS lab2-26 lab2-27 lab2-29
+set -A TMGR_RMI_PORTS 15666 15667 15668
+set -A TMGR_RMI_OBJ_NAMES G13TManager_1 G13TManager_2 G13TManager_3
+
+#export TRANSACTION_IDLE_TIMEOUT=600000
+#export DEADLOCK_TIMEOUT=10000
+export TRANSACTION_IDLE_TIMEOUT=240000
+export DEADLOCK_TIMEOUT=30000
+
+export CLASSPATH=${SHARED_SRC}/G13Shared.jar:${TX_SRC}/TxIntf.jar:${TX_SRC}/TxSystem.jar:${TOOLS}/jango.jar:.:
+
+export LOGNAME=$(id -un)
+
+export TESTENVDIR=${SRC512_HOME}/testing
+export TESTBASEDATADIR=${TESTENVDIR}/basedata
+export GENDATADIR=${TESTENVDIR}/gendata
+export CITY_LIST=${TESTBASEDATADIR}/cities.txt
+
+export TRACE_ENABLED=true
+export TEST_ID=DEMO
+#export TEST_ID=DEV
+export PERF_MONITOR_ENABLED=true
+export PERF_IGNORE_ERR_METRIC=true
+export PERF_TIME_RESOLUTION=TIME_MIL
+export HOSTNAME=$(hostname)
+
+export LOGDIR=${TESTENVDIR}/logs
