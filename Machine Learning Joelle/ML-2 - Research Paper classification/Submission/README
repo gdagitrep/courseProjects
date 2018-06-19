@@ -1,0 +1,37 @@
+Mutual Information:
+
+Step -1)  Put the bag of words ot be used, the training input in the same folder as the mutual_info.py
+
+Step - 2) Run the mutual_info.py
+
+Step - 3) Run the topbagofwords.py to extract the bag of words
+
+Naive Bayes:
+
+Step - 1) Put the bag of words ot be used, the training input, training output and the test input in the same folder as the naive_bayes.py
+
+
+Step - 2) Run the naive_bayes.py with argument k (k = number of words in the bag of words)
+
+
+KNN:
+
+Step - 1) Run cleandata.py
+
+Step - 2) Run extractFeatures.py
+
+Step - 3) Run KNN.py
+
+
+Decision Tree:
+
+Step - 1) Put the bag of words ot be used, the training input, training output and the test input in the same folder as the decide.py
+
+
+Step - 2) Run the decide.py 
+
+
+
+
+
+
