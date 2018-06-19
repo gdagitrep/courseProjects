@@ -1,0 +1,1 @@
+MNIST Handwritten Digits Data taken from here: http://yann.lecun.com/exdb/mnist/ 
